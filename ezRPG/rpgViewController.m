@@ -10,20 +10,35 @@
 
 @interface rpgViewController ()
 
+- (void)presentAdminView:(UISwipeGestureRecognizer *)recognizer;
+
 @end
+
+#pragma mark
 
 @implementation rpgViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    // Add a gesture recognizer for opening the admin view.
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                                 action:@selector(presentAdminView:)];
+    [swipeGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
+#if TARGET_IPHONE_SIMULATOR
+    [swipeGestureRecognizer setNumberOfTouchesRequired:1];
+#else
+    [swipeGestureRecognizer setNumberOfTouchesRequired:3];
+#endif
+    [self.view addGestureRecognizer:swipeGestureRecognizer];
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void)presentAdminView:(UISwipeGestureRecognizer *)recognizer
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self performSegueWithIdentifier:@"AdminSegue"
+                              sender:self];
 }
 
 @end

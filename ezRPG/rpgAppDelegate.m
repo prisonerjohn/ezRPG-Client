@@ -8,11 +8,12 @@
 
 #import "rpgAppDelegate.h"
 
+#import "rpgAdminViewController.h"
+
 @implementation rpgAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     return YES;
 }
 							

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		256932C5D6814A73AF6975FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B0F891368B4484B0AAC10A /* libPods.a */; };
+		64C78D2B18C81E2A001DFADB /* rpgAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */; };
+		64C78D3618C823BB001DFADB /* rpgEditTokensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D3518C823BB001DFADB /* rpgEditTokensViewController.m */; };
+		64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D3918C8276A001DFADB /* rpgToken.m */; };
 		64D1146218C8194900A89FE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146118C8194900A89FE6 /* Foundation.framework */; };
 		64D1146418C8194900A89FE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146318C8194900A89FE6 /* CoreGraphics.framework */; };
 		64D1146618C8194900A89FE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146518C8194900A89FE6 /* UIKit.framework */; };
@@ -20,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64C78D2918C81E2A001DFADB /* rpgAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgAdminViewController.h; sourceTree = "<group>"; };
+		64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgAdminViewController.m; sourceTree = "<group>"; };
+		64C78D3418C823BB001DFADB /* rpgEditTokensViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgEditTokensViewController.h; sourceTree = "<group>"; };
+		64C78D3518C823BB001DFADB /* rpgEditTokensViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgEditTokensViewController.m; sourceTree = "<group>"; };
+		64C78D3718C82629001DFADB /* rpgGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rpgGlobals.h; sourceTree = "<group>"; };
+		64C78D3818C8276A001DFADB /* rpgToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgToken.h; sourceTree = "<group>"; };
+		64C78D3918C8276A001DFADB /* rpgToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgToken.m; sourceTree = "<group>"; };
 		64D1145E18C8194900A89FE6 /* ezRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D1146118C8194900A89FE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64D1146318C8194900A89FE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,9 +97,16 @@
 		64D1146718C8194900A89FE6 /* ezRPG */ = {
 			isa = PBXGroup;
 			children = (
+				64D1147318C8194900A89FE6 /* Main.storyboard */,
+				64C78D2918C81E2A001DFADB /* rpgAdminViewController.h */,
+				64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */,
 				64D1147018C8194900A89FE6 /* rpgAppDelegate.h */,
 				64D1147118C8194900A89FE6 /* rpgAppDelegate.m */,
-				64D1147318C8194900A89FE6 /* Main.storyboard */,
+				64C78D3418C823BB001DFADB /* rpgEditTokensViewController.h */,
+				64C78D3518C823BB001DFADB /* rpgEditTokensViewController.m */,
+				64C78D3718C82629001DFADB /* rpgGlobals.h */,
+				64C78D3818C8276A001DFADB /* rpgToken.h */,
+				64C78D3918C8276A001DFADB /* rpgToken.m */,
 				64D1147618C8194900A89FE6 /* rpgViewController.h */,
 				64D1147718C8194900A89FE6 /* rpgViewController.m */,
 				64D1147918C8194900A89FE6 /* Images.xcassets */,
@@ -210,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C78D2B18C81E2A001DFADB /* rpgAdminViewController.m in Sources */,
+				64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */,
+				64C78D3618C823BB001DFADB /* rpgEditTokensViewController.m in Sources */,
 				64D1147218C8194900A89FE6 /* rpgAppDelegate.m in Sources */,
 				64D1147818C8194900A89FE6 /* rpgViewController.m in Sources */,
 				64D1146E18C8194900A89FE6 /* main.m in Sources */,
@@ -320,6 +340,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ezRPG/ezRPG-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = "ezRPG/ezRPG-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -334,6 +358,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ezRPG/ezRPG-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = "ezRPG/ezRPG-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
