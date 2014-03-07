@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Admin-->
+        <!--Rpg Admin View Controller - Admin-->
         <scene sceneID="5JW-Ey-Aww">
             <objects>
-                <viewController title="Admin" id="cjS-Bx-HTz" sceneMemberID="viewController">
+                <viewController title="Admin" id="cjS-Bx-HTz" customClass="rpgAdminViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hnQ-hH-TXv"/>
                         <viewControllerLayoutGuide type="bottom" id="HXv-1d-evb"/>
@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dk1-kj-BWZ" kind="push" id="lnd-yg-QU3"/>
+                                    <action selector="editTokens:" destination="cjS-Bx-HTz" eventType="touchUpInside" id="Hw3-lb-8mp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-zg-Pks">
@@ -32,48 +32,105 @@
                                 <state key="normal" title="Edit Questions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editQuestions:" destination="cjS-Bx-HTz" eventType="touchUpInside" id="vRd-WE-Z0C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Admin" id="QpJ-1N-GXw"/>
+                    <connections>
+                        <segue destination="qW7-yg-4hr" kind="push" identifier="EditItemsSegue" id="mvY-5P-NHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jo-4e-4Vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1550" y="-793"/>
         </scene>
-        <!--Rpg Edit Tokens View Controller - Edit Tokens-->
-        <scene sceneID="GcX-sd-UF1">
+        <!--Rpg Edit Items View Controller - Edit Items-->
+        <scene sceneID="OOq-nU-CX5">
             <objects>
-                <tableViewController title="Edit Tokens" id="dk1-kj-BWZ" customClass="rpgEditTokensViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eUL-AL-5Yo">
+                <tableViewController id="qW7-yg-4hr" customClass="rpgEditItemsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AFu-8s-V9e">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="N6Q-Cv-3Bh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" id="m4w-16-Wlg">
                                 <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N6Q-Cv-3Bh" id="F5D-F8-pgo">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4w-16-Wlg" id="ecv-9Y-Cop">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TokenCell" id="QLX-Fu-OMR">
+                                <rect key="frame" x="0.0" y="130" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QLX-Fu-OMR" id="kIz-s7-6uk">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qW7-yg-4hr" id="8e4-p4-Ply"/>
+                            <outlet property="delegate" destination="qW7-yg-4hr" id="4gK-4z-KIs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Items" id="0B3-SQ-HTF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dcb-Nd-Obd">
+                            <connections>
+                                <action selector="insertNewItem:" destination="qW7-yg-4hr" id="azi-UY-Tc9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="B03-8c-xKp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="Lt2-EF-N9e" kind="push" identifier="EditStatsSegue" id="EiX-Qd-7ZN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yf6-5v-OnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2526" y="-793"/>
+        </scene>
+        <!--Rpg Edit Stats View Controller - Edit Stats-->
+        <scene sceneID="bxR-19-Fuf">
+            <objects>
+                <tableViewController id="Lt2-EF-N9e" customClass="rpgEditStatsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dxi-4S-Kwr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="saR-Iz-tq8">
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="saR-Iz-tq8" id="p88-z8-FeU">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="dk1-kj-BWZ" id="ukB-At-qAs"/>
-                            <outlet property="delegate" destination="dk1-kj-BWZ" id="qY2-4r-jHp"/>
+                            <outlet property="dataSource" destination="Lt2-EF-N9e" id="wQ1-ar-aax"/>
+                            <outlet property="delegate" destination="Lt2-EF-N9e" id="KmS-LT-Bin"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Tokens" id="3fZ-ju-Sm2"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="NtY-JU-Yvf">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <attributedString key="attributedTitle"/>
-                    </refreshControl>
+                    <navigationItem key="navigationItem" title="Edit Stats" id="6Ci-Xe-xBK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Xc0-9M-ZBu">
+                            <connections>
+                                <action selector="editItem:" destination="Lt2-EF-N9e" id="XFw-2K-2m9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MHD-2I-yAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="484-Mn-zKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="-793"/>
+            <point key="canvasLocation" x="3519" y="-793"/>
         </scene>
         <!--Rpg View Controller-->
         <scene sceneID="tne-QT-ifu">

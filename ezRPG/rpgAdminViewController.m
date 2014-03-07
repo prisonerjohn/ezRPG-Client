@@ -8,31 +8,42 @@
 
 #import "rpgAdminViewController.h"
 
+#import "rpgEditItemsViewController.h"
+
 @interface rpgAdminViewController ()
 
 @end
 
 @implementation rpgAdminViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([segue.identifier isEqualToString:@"EditItemsSegue"]) {
+        rpgEditItemsViewController *vc = segue.destinationViewController;
+        [vc setEditingTokens:self.isEditingTokens];
+    }
+}
+
+#pragma mark - UI Callback Methods
+
+- (IBAction)editTokens:(id)sender
+{
+    [self setEditingTokens:YES];
+    [self performSegueWithIdentifier:@"EditItemsSegue"
+                              sender:self];
+}
+
+- (IBAction)editQuestions:(id)sender
+{
+    [self setEditingTokens:NO];
+    [self performSegueWithIdentifier:@"EditItemsSegue"
+                              sender:self];
 }
 
 @end
