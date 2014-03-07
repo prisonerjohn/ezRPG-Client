@@ -18,7 +18,7 @@
     if (self) {
         [self setTokenID:[JSON objectForKey:@"_id"]];
         [self setName:[JSON objectForKey:@"name"]];
-        [self setCreatedAt:[[rpgGlobals sRFC3339DateFormatter] dateFromString:[JSON objectForKey:@"created_at"]]];
+//        [self setCreatedAt:[[rpgGlobals sRFC3339DateFormatter] dateFromString:[JSON objectForKey:@"created_at"]]];
     }
     return self;
 }

@@ -14,8 +14,13 @@
 #define kApiBaseURL @"http://localhost:5000"
 #endif
 
+#define kTokenCellIdentifier    @"TokenCell"
+#define kQuestionCellIdentifier @"QuestionCell"
+#define kScoreCellIdentifier    @"ScoreCell"
+
 @interface rpgGlobals : NSObject
 
 + (NSDateFormatter *)sRFC3339DateFormatter;
++ (void)handleError:(NSError *)error;
 
 @end

@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define kTokenCellIdentifier    @"TokenCell"
-#define kQuestionCellIdentifier @"QuestionCell"
-
 @interface rpgEditItemsViewController : UITableViewController
 
 @property (assign, nonatomic, getter = isEditingTokens, setter = setEditingTokens:) BOOL bEditingTokens;

@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		256932C5D6814A73AF6975FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B0F891368B4484B0AAC10A /* libPods.a */; };
+		645F7FD318CA12410097232F /* rpgScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FD218CA12410097232F /* rpgScore.m */; };
+		645F7FD618CA36A70097232F /* rpgScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FD518CA36A70097232F /* rpgScoreCell.m */; };
 		64C78D2B18C81E2A001DFADB /* rpgAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */; };
 		64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D3918C8276A001DFADB /* rpgToken.m */; };
 		64C78D8718C8D0EF001DFADB /* rpgEditItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8618C8D0EF001DFADB /* rpgEditItemsViewController.m */; };
 		64C78D8A18C8D23A001DFADB /* rpgQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8918C8D23A001DFADB /* rpgQuestion.m */; };
 		64C78D8C18C8D2F0001DFADB /* rpgGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8B18C8D2F0001DFADB /* rpgGlobals.m */; };
-		64C78D8F18C8DA8C001DFADB /* rpgEditStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8E18C8DA8C001DFADB /* rpgEditStatsViewController.m */; };
+		64C78D8F18C8DA8C001DFADB /* rpgEditScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8E18C8DA8C001DFADB /* rpgEditScoresViewController.m */; };
 		64D1146218C8194900A89FE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146118C8194900A89FE6 /* Foundation.framework */; };
 		64D1146418C8194900A89FE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146318C8194900A89FE6 /* CoreGraphics.framework */; };
 		64D1146618C8194900A89FE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1146518C8194900A89FE6 /* UIKit.framework */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		645F7FD118CA12410097232F /* rpgScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgScore.h; sourceTree = "<group>"; };
+		645F7FD218CA12410097232F /* rpgScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgScore.m; sourceTree = "<group>"; };
+		645F7FD418CA36A70097232F /* rpgScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgScoreCell.h; sourceTree = "<group>"; };
+		645F7FD518CA36A70097232F /* rpgScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgScoreCell.m; sourceTree = "<group>"; };
 		64C78D2918C81E2A001DFADB /* rpgAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgAdminViewController.h; sourceTree = "<group>"; };
 		64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgAdminViewController.m; sourceTree = "<group>"; };
 		64C78D3718C82629001DFADB /* rpgGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rpgGlobals.h; sourceTree = "<group>"; };
@@ -36,8 +42,8 @@
 		64C78D8818C8D23A001DFADB /* rpgQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgQuestion.h; sourceTree = "<group>"; };
 		64C78D8918C8D23A001DFADB /* rpgQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgQuestion.m; sourceTree = "<group>"; };
 		64C78D8B18C8D2F0001DFADB /* rpgGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgGlobals.m; sourceTree = "<group>"; };
-		64C78D8D18C8DA8C001DFADB /* rpgEditStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgEditStatsViewController.h; sourceTree = "<group>"; };
-		64C78D8E18C8DA8C001DFADB /* rpgEditStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgEditStatsViewController.m; sourceTree = "<group>"; };
+		64C78D8D18C8DA8C001DFADB /* rpgEditScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgEditScoresViewController.h; sourceTree = "<group>"; };
+		64C78D8E18C8DA8C001DFADB /* rpgEditScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgEditScoresViewController.m; sourceTree = "<group>"; };
 		64D1145E18C8194900A89FE6 /* ezRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D1146118C8194900A89FE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64D1146318C8194900A89FE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,12 +118,16 @@
 				64D1147118C8194900A89FE6 /* rpgAppDelegate.m */,
 				64C78D8518C8D0EF001DFADB /* rpgEditItemsViewController.h */,
 				64C78D8618C8D0EF001DFADB /* rpgEditItemsViewController.m */,
-				64C78D8D18C8DA8C001DFADB /* rpgEditStatsViewController.h */,
-				64C78D8E18C8DA8C001DFADB /* rpgEditStatsViewController.m */,
+				64C78D8D18C8DA8C001DFADB /* rpgEditScoresViewController.h */,
+				64C78D8E18C8DA8C001DFADB /* rpgEditScoresViewController.m */,
 				64C78D3718C82629001DFADB /* rpgGlobals.h */,
 				64C78D8B18C8D2F0001DFADB /* rpgGlobals.m */,
 				64C78D8818C8D23A001DFADB /* rpgQuestion.h */,
 				64C78D8918C8D23A001DFADB /* rpgQuestion.m */,
+				645F7FD118CA12410097232F /* rpgScore.h */,
+				645F7FD218CA12410097232F /* rpgScore.m */,
+				645F7FD418CA36A70097232F /* rpgScoreCell.h */,
+				645F7FD518CA36A70097232F /* rpgScoreCell.m */,
 				64C78D3818C8276A001DFADB /* rpgToken.h */,
 				64C78D3918C8276A001DFADB /* rpgToken.m */,
 				64D1147618C8194900A89FE6 /* rpgViewController.h */,
@@ -241,9 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C78D2B18C81E2A001DFADB /* rpgAdminViewController.m in Sources */,
+				645F7FD618CA36A70097232F /* rpgScoreCell.m in Sources */,
 				64C78D8A18C8D23A001DFADB /* rpgQuestion.m in Sources */,
-				64C78D8F18C8DA8C001DFADB /* rpgEditStatsViewController.m in Sources */,
+				64C78D8F18C8DA8C001DFADB /* rpgEditScoresViewController.m in Sources */,
 				64C78D8C18C8D2F0001DFADB /* rpgGlobals.m in Sources */,
+				645F7FD318CA12410097232F /* rpgScore.m in Sources */,
 				64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */,
 				64D1147218C8194900A89FE6 /* rpgAppDelegate.m in Sources */,
 				64D1147818C8194900A89FE6 /* rpgViewController.m in Sources */,

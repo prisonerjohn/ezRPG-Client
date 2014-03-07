@@ -9,7 +9,7 @@
 #import "rpgEditItemsViewController.h"
 
 #import "AFHTTPRequestOperationManager.h"
-#import "rpgEditStatsViewController.h"
+#import "rpgEditScoresViewController.h"
 #import "rpgGlobals.h"
 #import "rpgQuestion.h"
 #import "rpgToken.h"
@@ -21,7 +21,6 @@
 @property (assign, nonatomic) rpgToken *selectedToken;
 
 - (void)updateItems:(id)sender;
-- (void)handleError:(NSError *)error;
 
 @end
 
@@ -43,6 +42,13 @@
 {
     [super viewWillAppear:animated];
     
+    if (self.isEditingTokens) {
+        [self.navigationItem setTitle:@"Edit Tokens"];
+    }
+    else {
+        [self.navigationItem setTitle:@"Edit Questions"];
+    }
+    
     [self updateItems:self];
 }
 
@@ -52,9 +58,6 @@
     [[AFHTTPRequestOperationManager manager] GET:[NSString stringWithFormat:@"%@/%@", kApiBaseURL, self.isEditingTokens? @"tokens":@"questions"]
                                       parameters:nil
                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                             if ([sender respondsToSelector:@selector(endRefreshing)]) {
-                                                 [sender endRefreshing];
-                                             }
                                              NSLog(@"JSON: %@", responseObject);
                                              NSArray *itemsArray = responseObject;
                                              [self.items removeAllObjects];
@@ -68,13 +71,17 @@
                                                      [self.items addObject:question];
                                                  }
                                              }
+                                             
+                                             if ([sender respondsToSelector:@selector(endRefreshing)]) {
+                                                 [sender endRefreshing];
+                                             }
                                              [self.tableView reloadData];
                                          }
                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                              if ([sender respondsToSelector:@selector(endRefreshing)]) {
                                                  [sender endRefreshing];
                                              }
-                                             [self handleError:error];
+                                             [rpgGlobals handleError:error];
                                          }];
 }
 
@@ -94,7 +101,7 @@
                  sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"EditStatsSegue"]) {
-        rpgEditStatsViewController *vc = segue.destinationViewController;
+        rpgEditScoresViewController *vc = segue.destinationViewController;
         [vc setEditingTokens:self.isEditingTokens];
         if (self.isEditingTokens) {
             vc.token = self.selectedToken;
@@ -103,16 +110,6 @@
             vc.question = self.selectedQuestion;
         }
     }
-}
-
-- (void)handleError:(NSError *)error
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];
 }
 
 #pragma mark - UIAlertView Delegate Methods
@@ -125,7 +122,7 @@
     
     // Add the item on the server.
     [[AFHTTPRequestOperationManager manager] POST:[NSString stringWithFormat:@"%@/%@/new", kApiBaseURL, self.isEditingTokens? @"token":@"question"]
-                                       parameters:@{ @"name" : newName }
+                                       parameters:@{@"name" : newName}
                                           success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                               NSLog(@"JSON: %@", responseObject);
                                               NSDictionary *itemDict = responseObject;
@@ -140,7 +137,7 @@
                                               [self.tableView reloadData];
                                           }
                                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                              [self handleError:error];
+                                              [rpgGlobals handleError:error];
                                           }];
 }
 
@@ -197,7 +194,7 @@
                                                                      withRowAnimation:UITableViewRowAnimationFade];
                                                 }
                                                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                    [self handleError:error];
+                                                    [rpgGlobals handleError:error];
                                                 }];
     }
 }

@@ -97,22 +97,54 @@
             </objects>
             <point key="canvasLocation" x="2526" y="-793"/>
         </scene>
-        <!--Rpg Edit Stats View Controller - Edit Stats-->
+        <!--Rpg Edit Scores View Controller - Edit Scores-->
         <scene sceneID="bxR-19-Fuf">
             <objects>
-                <tableViewController id="Lt2-EF-N9e" customClass="rpgEditStatsViewController" sceneMemberID="viewController">
+                <tableViewController id="Lt2-EF-N9e" customClass="rpgEditScoresViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dxi-4S-Kwr">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="saR-Iz-tq8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScoreCell" id="saR-Iz-tq8" customClass="rpgScoreCell">
                                 <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="saR-Iz-tq8" id="p88-z8-FeU">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="55" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZZ-vF-hDE">
+                                            <rect key="frame" x="706" y="7" width="42" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="55" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paR-wV-9kf">
+                                            <rect key="frame" x="605" y="7" width="42" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbR-sm-jKw">
+                                            <rect key="frame" x="555" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="326-XC-8nf">
+                                            <rect key="frame" x="656" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="noTextField" destination="GZZ-vF-hDE" id="2f0-1Y-YxG"/>
+                                    <outlet property="yesTextField" destination="paR-wV-9kf" id="o4Y-Ls-z8M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -120,10 +152,10 @@
                             <outlet property="delegate" destination="Lt2-EF-N9e" id="KmS-LT-Bin"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Stats" id="6Ci-Xe-xBK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Xc0-9M-ZBu">
+                    <navigationItem key="navigationItem" title="Edit Scores" id="6Ci-Xe-xBK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="lIT-UI-7QK">
                             <connections>
-                                <action selector="editItem:" destination="Lt2-EF-N9e" id="XFw-2K-2m9"/>
+                                <action selector="editItem:" destination="Lt2-EF-N9e" id="vlw-Ot-uWr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

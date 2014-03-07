@@ -1,5 +1,5 @@
 //
-//  rpgEditStatsViewController.h
+//  rpgEditScoresViewController.h
 //  ezRPG
 //
 //  Created by Elie Zananiri on 2014-03-06.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "rpgQuestion.h"
-#import "rpgToken.h"
+@class rpgQuestion;
+@class rpgToken;
 
-@interface rpgEditStatsViewController : UITableViewController
+@interface rpgEditScoresViewController : UITableViewController
 
 @property (assign, nonatomic, getter = isEditingTokens, setter = setEditingTokens:) BOOL bEditingTokens;
 
