@@ -11,7 +11,7 @@
 #ifdef DEBUG
 #define kApiBaseURL @"http://localhost:5000"
 #else
-#define kApiBaseURL @"http://localhost:5000"
+#define kApiBaseURL @"http://powerful-shore-2837.herokuapp.com"
 #endif
 
 #define kTokenCellIdentifier    @"TokenCell"
