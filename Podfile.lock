@@ -18,11 +18,14 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JYRadarChart (0.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - JYRadarChart (~> 0.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  JYRadarChart: 74143cf023e06d1fbe10f28c6b1f0c6d657e7e17
 
 COCOAPODS: 0.29.0

@@ -10,6 +10,8 @@
 		256932C5D6814A73AF6975FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B0F891368B4484B0AAC10A /* libPods.a */; };
 		645F7FD318CA12410097232F /* rpgScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FD218CA12410097232F /* rpgScore.m */; };
 		645F7FD618CA36A70097232F /* rpgScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FD518CA36A70097232F /* rpgScoreCell.m */; };
+		645F7FD918CA66A50097232F /* rpgGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FD818CA66A50097232F /* rpgGameViewController.m */; };
+		645F7FDC18CA73950097232F /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 645F7FDB18CA73950097232F /* NSMutableArray+Shuffling.m */; };
 		64C78D2B18C81E2A001DFADB /* rpgAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */; };
 		64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D3918C8276A001DFADB /* rpgToken.m */; };
 		64C78D8718C8D0EF001DFADB /* rpgEditItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C78D8618C8D0EF001DFADB /* rpgEditItemsViewController.m */; };
@@ -32,6 +34,10 @@
 		645F7FD218CA12410097232F /* rpgScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgScore.m; sourceTree = "<group>"; };
 		645F7FD418CA36A70097232F /* rpgScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgScoreCell.h; sourceTree = "<group>"; };
 		645F7FD518CA36A70097232F /* rpgScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgScoreCell.m; sourceTree = "<group>"; };
+		645F7FD718CA66A50097232F /* rpgGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgGameViewController.h; sourceTree = "<group>"; };
+		645F7FD818CA66A50097232F /* rpgGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgGameViewController.m; sourceTree = "<group>"; };
+		645F7FDA18CA73950097232F /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		645F7FDB18CA73950097232F /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 		64C78D2918C81E2A001DFADB /* rpgAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpgAdminViewController.h; sourceTree = "<group>"; };
 		64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rpgAdminViewController.m; sourceTree = "<group>"; };
 		64C78D3718C82629001DFADB /* rpgGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rpgGlobals.h; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				64D1147318C8194900A89FE6 /* Main.storyboard */,
+				645F7FDA18CA73950097232F /* NSMutableArray+Shuffling.h */,
+				645F7FDB18CA73950097232F /* NSMutableArray+Shuffling.m */,
 				64C78D2918C81E2A001DFADB /* rpgAdminViewController.h */,
 				64C78D2A18C81E2A001DFADB /* rpgAdminViewController.m */,
 				64D1147018C8194900A89FE6 /* rpgAppDelegate.h */,
@@ -120,6 +128,8 @@
 				64C78D8618C8D0EF001DFADB /* rpgEditItemsViewController.m */,
 				64C78D8D18C8DA8C001DFADB /* rpgEditScoresViewController.h */,
 				64C78D8E18C8DA8C001DFADB /* rpgEditScoresViewController.m */,
+				645F7FD718CA66A50097232F /* rpgGameViewController.h */,
+				645F7FD818CA66A50097232F /* rpgGameViewController.m */,
 				64C78D3718C82629001DFADB /* rpgGlobals.h */,
 				64C78D8B18C8D2F0001DFADB /* rpgGlobals.m */,
 				64C78D8818C8D23A001DFADB /* rpgQuestion.h */,
@@ -255,9 +265,11 @@
 				64C78D8A18C8D23A001DFADB /* rpgQuestion.m in Sources */,
 				64C78D8F18C8DA8C001DFADB /* rpgEditScoresViewController.m in Sources */,
 				64C78D8C18C8D2F0001DFADB /* rpgGlobals.m in Sources */,
+				645F7FDC18CA73950097232F /* NSMutableArray+Shuffling.m in Sources */,
 				645F7FD318CA12410097232F /* rpgScore.m in Sources */,
 				64C78D3A18C8276A001DFADB /* rpgToken.m in Sources */,
 				64D1147218C8194900A89FE6 /* rpgAppDelegate.m in Sources */,
+				645F7FD918CA66A50097232F /* rpgGameViewController.m in Sources */,
 				64D1147818C8194900A89FE6 /* rpgViewController.m in Sources */,
 				64D1146E18C8194900A89FE6 /* main.m in Sources */,
 				64C78D8718C8D0EF001DFADB /* rpgEditItemsViewController.m in Sources */,
