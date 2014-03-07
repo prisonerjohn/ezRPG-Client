@@ -25,7 +25,7 @@
     // Add a gesture recognizer for opening the admin view.
     UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                                  action:@selector(presentAdminView:)];
-    [swipeGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
+    [swipeGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
 #if TARGET_IPHONE_SIMULATOR
     [swipeGestureRecognizer setNumberOfTouchesRequired:1];
 #else
