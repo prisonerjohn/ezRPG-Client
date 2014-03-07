@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSMutableArray *scores;
 
 @property (strong, nonatomic) NSMutableDictionary *points;
+@property (strong, nonatomic) NSMutableDictionary *maxPts;
 @property (assign, nonatomic) NSInteger questionIndex;
 @property (assign, nonatomic) NSInteger maxPossiblePoints;
 
@@ -52,7 +53,8 @@
     self.scores = [NSMutableArray array];
     
     self.points = [NSMutableDictionary dictionary];
-
+    self.maxPts = [NSMutableDictionary dictionary];
+    
     JYRadarChart *radarChart = [[JYRadarChart alloc] initWithFrame:CGRectMake(128, 116, 512, 512)];
     [radarChart setSteps:4];
     [radarChart setR:(radarChart.frame.size.width * 0.4f)];
@@ -142,8 +144,11 @@
     
     // Reset points.
     [self.points removeAllObjects];
+    [self.maxPts removeAllObjects];
     for (rpgToken *token in self.tokens) {
         [self.points setObject:@0
+                        forKey:token.name];
+        [self.maxPts setObject:@0
                         forKey:token.name];
     }
     self.maxPossiblePoints = 0;
@@ -221,8 +226,6 @@
 
 - (void)pointsRound:(BOOL)bAnswer
 {
-    NSInteger roundMax = 0;
-    
     // Update all the points.
     rpgQuestion *question = [self.questions objectAtIndex:self.questionIndex];
     for (rpgScore *score in self.scores) {
@@ -237,17 +240,23 @@
             if (token) {
                 NSInteger pt = [[self.points objectForKey:token.name] integerValue];
                 pt += (bAnswer? score.yesPoints:score.noPoints);
+                pt = MAX(0, pt);
                 [self.points setObject:@(pt)
                                 forKey:token.name];
-                roundMax = MAX(roundMax, MAX(score.yesPoints, score.noPoints));
+                
+                NSInteger max = [[self.maxPts objectForKey:token.name] integerValue];
+                max += MAX(score.yesPoints, score.noPoints);
+                [self.maxPts setObject:@(max)
+                                forKey:token.name];
             }
         }
     }
     
-    self.maxPossiblePoints += roundMax;
-    
-    NSLog(@"New points: %@", self.points);
-    
+    self.maxPossiblePoints = 0;
+    for (NSNumber *num in [self.maxPts allValues]) {
+        self.maxPossiblePoints = MAX(self.maxPossiblePoints, [num integerValue]);
+    }
+        
     [UIView animateWithDuration:0.5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
