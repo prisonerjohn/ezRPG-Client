@@ -385,6 +385,7 @@
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = "ezRPG/ezRPG-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +404,7 @@
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = "ezRPG/ezRPG-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
